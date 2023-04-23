@@ -55,12 +55,12 @@ catkin build
 ## Running the trajectory tracker
 Assuming you have our simulation package already running, simply open a new terminal and run
 ```
-source devel/setup.bash && roslaunch survey_tracker path_follower_sim.launch
+source devel/setup.bash && roslaunch uav_control_mpc path_follower_sim.launch
 ```
 
 We have provided a script which publishes a lemniscate trajectory. Run this command in the terminal after taking off and switching to offboard
 ```
-source devel/setup.bash && rosrun survey_tracker test_fig8
+source devel/setup.bash && rosrun uav_control_mpc test_fig8
 ```
 
 The UAV should automatically follow a lemniscate trajectory. You may need to run the second command more than once to ensure the starting location is correct, otherwise the trajectory tracker will provide aggressive inputs to converge on the position setpoint.
