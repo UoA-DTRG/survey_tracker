@@ -1,0 +1,29 @@
+<launch>
+    <node pkg="uav_control_mpc" type="uav_control_mpc_path_follower_mpc" name="path_follower_mpc" output="screen">
+        <param name="tau_x" value="0.45" />
+        <param name="tau_y" value="0.45" />
+        <param name="tau_z" value="0.2" />
+
+        <param name="max_xy_vel" value="10.0" />
+        <param name="max_z_vel" value="3.0" />
+        <param name="max_delta_vel" value="1000.0" />
+
+        <param name="position_weight" value="700.0" />
+        <param name="velocity_weight" value="0.05" /> 
+        <param name="velocity_setpoint_weight" value="0.03" />
+        <param name="vel_setpoint_delta_weights" value="0.03" />
+
+        <param name="yaw_kp" value="1.3" />
+        <param name="yaw_lookahead_start" value="10" />
+        <param name="yaw_lookahead_end" value="20" />
+
+        <param name="blocking_yaw_error" value="6.28" />
+        <param name="blocking_min_vel" value="0.2" />
+
+        <param name="max_new_traj_start_rms" value="0.1" />
+
+        <param name="odom_frame" value="map" />
+        <param name="uav_frame" value="base_link" />
+        <param name="heartbeat_enable" value="true" />
+    </node>
+</launch>
